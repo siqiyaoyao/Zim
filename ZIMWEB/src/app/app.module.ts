@@ -28,10 +28,7 @@ import { HeaderComponent} from './header/header.component'
     NgZorroAntdModule.forRoot(), // 可以接受一个可选的配置对象，用于引入外部字体文件
     MainModule,
     LoginModule,
-    AppRoutingModule,
-    
-    
-    
+    AppRoutingModule,  
   ],
   providers:[
     Title
