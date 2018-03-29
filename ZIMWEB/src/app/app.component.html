@@ -1,1 +1,8 @@
 <router-outlet></router-outlet>
+<p>二级路由 </p>
+<a [routerLink]="[{ outlets: { test: ['modal'] } }]">Contact</a>
+
+<div>
+    <router-outlet name="test"></router-outlet>
+</div>
+

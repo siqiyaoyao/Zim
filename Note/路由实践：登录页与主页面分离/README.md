@@ -6,7 +6,7 @@
 - 第二层
   框架层，例如主体网站里的各个子页面，继承统一的框架，只在部分节点刷新元素
 
-## 思路 
+## 总体思路 
 在app module 下生成二级路由main module， 在该module放主体网站
 
 ## 准备工作
@@ -20,7 +20,7 @@
 `ng serve --port 5005 --open `
 在浏览器打开http://localhost:5005/ 即可查看网站应用
 
-## 主页面module
+### 路由主页面module
 生成带有路由功能的模块
 `ng g m main --routing`
 在app的目录下会发现main文件夹里面包含两个文件
@@ -33,6 +33,59 @@
 - main.component.html
 - main.component.ts
 - main.component.spec.ts
+
+
+## 方法一
+利用模块引入，app为一级路径，路由子模块为二级路径。
+简单便捷，更符合本次需求。时候做页面路由
+如果一级路径中的'main'
+那么所有在二级路径中写的path前都默认为'/main/path'
+
+### app-routing module
+指定路由子模块的路径 app-routing.module.ts
+```javascript
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: 'main',
+    loadChildren:'./main/main.module#MainModule'
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+```
+
+### main module
+在路由路径中设定指向的子页面
+```javascript
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { TestComponent} from './test.component';
+
+const routes: Routes = [
+  {
+    path:"",
+    component:TestComponent,
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class MainRoutingModule { }
+
+``` 
+
+## 方法二
+通过routes里的chidren属性来路由子页面，适合做组件路由
+
 
 ### 配置路由
 现在有两个路由文件
@@ -196,4 +249,13 @@ const routes: Routes = [
 通过/login 路径测试login页面
 
 login和我们的main目前就属于并列关系，不互相继承
+
+### 相关概念
+<router-outlet> 全局匿名出口只能用一个
+多个出口的使用方法
+有name属性的出口作为一个
+
+lazy load 懒加载的好处是，一开始页面加载会很快，因为没有下载很多东西
+需要加载在加载
+
 

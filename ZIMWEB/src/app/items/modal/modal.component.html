@@ -1,0 +1,14 @@
+<button nz-button [nzType]="'primary'" (click)="showModal()">
+  <span>Show Modal</span>
+</button>
+<nz-modal [nzVisible]="isVisible" [nzTitle]="'Modal'" [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)" (nzOnOk)="handleOk($event)">
+  <ng-template #modalContent>
+    <a routerLink="/profile">test router</a>
+    <p>Bla bla ...</p>
+    <p>Bla bla ...</p>
+  </ng-template>
+</nz-modal>
+<br />
+<button nz-button [nzType]="'info'" (click)="showConfirm()">
+  <span>confirm</span>
+</button>
