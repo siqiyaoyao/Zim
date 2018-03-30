@@ -6,6 +6,8 @@
 /tmp
 /out-tsc
 
+# models
+/src/assets/models
 # dependencies
 /node_modules
 

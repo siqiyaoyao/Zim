@@ -1,4 +1,4 @@
-<nz-layout>
+<nz-layout style="height: 100%">
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null" [nzBreakpoint]="'lg'">
     <div class="logo">
     </div>
@@ -30,11 +30,8 @@
         <nz-breadcrumb-item>User</nz-breadcrumb-item>
         <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
       </nz-breadcrumb>
-      <div style="padding:24px; background: #fff; min-height: 360px;">
-          <router-outlet  ></router-outlet>
-          
-         
-          
+      <div style="padding:24px; background: #fff; min-height: 660px;">
+          <router-outlet  ></router-outlet>                           
       </div>
     </nz-content>
     <nz-footer style="text-align: center;">SIQIYAOYOA ©2017 NINGBO</nz-footer>

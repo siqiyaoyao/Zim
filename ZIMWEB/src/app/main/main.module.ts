@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { UploadsComponent } from './pages/uploads/uploads.component';
+import { ViewerComponent } from './bim/viewer/viewer.component';
+//import { UploadsComponent } from './pages/uploads/uploads.component';
 
 
 @NgModule({
@@ -22,6 +24,6 @@ import { UploadsComponent } from './pages/uploads/uploads.component';
     BrowserAnimationsModule,
     NgZorroAntdModule,
   ],
-  declarations: [HomeComponent, MainComponent, UploadsComponent]
+  declarations: [HomeComponent, MainComponent, UploadsComponent, ViewerComponent]
 })
 export class MainModule { }

@@ -7,30 +7,31 @@ import { MainComponent } from './main/main.component';
 import { ModalComponent } from './items/modal/modal.component';
 import { UploadsComponent } from './main/pages/uploads/uploads.component';
 const routes: Routes = [
+  
   /*
   {
     path: '',
     redirectTo: '/main',
     pathMatch: 'full'
   },
-  */
+  //*/
   /*
   {
     path:'main',
     loadChildren:'./main/main.module#MainModule'
   },
   */
- {
-  path:'',
-  component:MainComponent,
+//  {
+//   path:'',
+//   component:MainComponent,
 
-  ///*
-  children:[
-    {path:'home',component:HeaderComponent,},
-    {path:'upload',component:UploadsComponent},
-  ]
+//   ///*
+//   children:[
+//     {path:'home',component:HeaderComponent,},
+//     {path:'upload',component:UploadsComponent},
+//   ]
 // */
-},
+//},
 
   // {
   //   path:'login',

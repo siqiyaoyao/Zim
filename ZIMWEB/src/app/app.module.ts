@@ -22,7 +22,7 @@ import { ModalComponent } from './items/modal/modal.component';
     AppComponent,
     HeaderComponent,
     ModalComponent,
-  
+    
    
   ],
   imports: [
