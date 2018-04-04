@@ -49,11 +49,11 @@ const routes: Routes = [
     path:'profile',
     loadChildren:'app/profile/profile.module#ProfileModule'
   },
-  
   {
     path:'test',
     loadChildren:'app/test/test.module#TestModule'
-  }
+  },
+  
   
 ];
 
