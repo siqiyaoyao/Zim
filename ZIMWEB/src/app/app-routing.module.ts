@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './login/login.component';
-import { HeaderComponent } from './header/header.component';
+
 import { MainComponent } from './main/main.component';
 import { ModalComponent } from './items/modal/modal.component';
 import { UploadsComponent } from './main/pages/uploads/uploads.component';

@@ -10,8 +10,9 @@ import { MainModule } from './main/main.module';
 import { LoginModule } from './login/login.module';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
-import { HeaderComponent} from './header/header.component';
+
 import { ModalComponent } from './items/modal/modal.component';
+
 
 
 //test router
@@ -20,8 +21,9 @@ import { ModalComponent } from './items/modal/modal.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+   
     ModalComponent,
+    
     
    
   ],
