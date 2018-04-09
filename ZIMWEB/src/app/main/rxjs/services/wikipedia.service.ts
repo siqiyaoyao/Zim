@@ -17,8 +17,9 @@ export class WikipediaService {
     // `?search=${term}&action=opensearch&format=json&callback=JSONP_CALLBACK`
     return this.jsonp
                .get('http://en.wikipedia.org/w/api.php?callback=JSONP_CALLBACK', { search })
-               .toPromise()
-               .then((response)=>response.json[1])
+               //.toPromise()
+               //.then((response)=>response.json[1])
+               .map(response => response.json()[1])
   }
 
 }
