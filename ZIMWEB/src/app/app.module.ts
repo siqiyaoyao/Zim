@@ -1,3 +1,4 @@
+
 import { BrowserModule,Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -38,7 +39,8 @@ import { ModalComponent } from './items/modal/modal.component';
     AppRoutingModule,  
   ],
   providers:[
-    Title
+    Title,
+   
   ],
   bootstrap: [AppComponent]
 })

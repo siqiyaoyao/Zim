@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { TestRoutingModule } from './test-routing.module';
 
 import { HeaderComponent } from './header/header.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 @NgModule({
@@ -12,6 +13,6 @@ import { HeaderComponent } from './header/header.component';
     CommonModule,
     TestRoutingModule
   ],
-  declarations: [TestComponent, HeaderComponent, ]
+  declarations: [TestComponent, HeaderComponent, RxjsComponent, ]
 })
 export class TestModule { }

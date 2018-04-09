@@ -35,8 +35,10 @@ export class ViewerComponent implements OnInit,OnDestroy {
   ngOnInit() {
     this.div3D = '#3Dviwer'
     this.div2D = '#2Dviwer'
-    this.path3D = 'assets/models/2d0402/Resource/三维视图/{三维} 96277/{三维}.svf';
-    this.path2D = 'assets/models/2d0402/2b3fcd79-6859-4870-ee68-96532ad70972_f2d/primaryGraphics.f2d';
+    //this.path3D = 'assets/models/2d0402/Resource/三维视图/{三维} 96277/{三维}.svf';
+    //this.path2D = 'assets/models/2d0402/2b3fcd79-6859-4870-ee68-96532ad70972_f2d/primaryGraphics.f2d';
+    this.path3D = 'assets/models/别墅/3d.svf';
+    this.path2D = 'assets/models/别墅/f2d_结构平面__-0.3m/primaryGraphics.f2d';
     ///*
    
     this.viwer2DInit(this.div2D,this.path2D); 

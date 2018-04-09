@@ -1,3 +1,5 @@
+import { WikiComponent } from './rxjs/wiki/wiki/wiki.component';
+import { T1Component } from './rxjs/t1/t1.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main.component';
@@ -14,7 +16,9 @@ const routes: Routes = [
     children:[
       {path:'home',component:HomeComponent},
       {path:'upload',component:UploadsComponent},
-      {path:'',component:ViewerComponent},
+      {path:'view',component:ViewerComponent},
+      {path:'T1',component:T1Component},
+      {path:'',component:WikiComponent},
     ]
    
   },
