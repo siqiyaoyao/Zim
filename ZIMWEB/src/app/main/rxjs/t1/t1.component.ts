@@ -71,6 +71,7 @@ export class T1Component implements OnInit {
     .subscribe(
       
     )
+    
      
       
   }
@@ -78,9 +79,11 @@ export class T1Component implements OnInit {
   rxjsStream(){
     let data = this.testData;
     //let stream$ = Observable.of(1,2,3).map(x => x+"岁");
-    let stream$ = Observable.from(data).map(x => x+"岁");
+    return Observable.from(data).map(x => {
+      return x+"岁"
+    });
     
-    return stream$;
+   
    
   }
 
