@@ -19,6 +19,10 @@ export class WikipediaService {
              //.distinctUntilChanged()
              .switchMap(term => this.WikipediaService.search(term));
              */
+  search(term){
+    
+
+  }
 
   _search (term:string){
     var search = new URLSearchParams();

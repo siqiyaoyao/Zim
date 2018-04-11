@@ -59,4 +59,8 @@ FormControl 相当于 ngForm.controls
 然后和html模板数据进行映射
 form层
 '<form [formGroup] ="userForm"> '
+form内层
 用标签 formGroupName/formControlName = "name" 进行数据映射
+
+用formBuilder.group({})来生成初始数据
+Validators.required 设置验证器
