@@ -23,18 +23,17 @@ export class WikiComponent implements OnInit {
   items:Observable<Array<string>>;
   term = new FormControl();
   constructor(private WikipediaService:WikipediaService) { 
+    /*
     this.items = this.term.valueChanges // 输入框的值改变即触发
              .debounceTime(400) // 4秒内只获取最新的数据发射
              .do(value=>console.log(value))
              .distinctUntilChanged()
              //.distinctUntilChanged()
              .switchMap(term => this.WikipediaService.search(term));
+             */
   }
 
-  // search(term){
-  //   this.WikipediaService.search(term)
-  //                        .then(items => this.items = items)
-  // }
+  
   sub1;
   sub2;
   ngOnInit() {

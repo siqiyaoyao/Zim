@@ -1,13 +1,26 @@
 import { Injectable } from '@angular/core';
 import { URLSearchParams, Jsonp } from '@angular/http';
-
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/distinctUntilChanged';
 
 @Injectable()
 export class WikipediaService {
 
   constructor(private jsonp:Jsonp) { }
 
-  search (term:string){
+  /*
+    this.items = this.term.valueChanges // 输入框的值改变即触发
+             .debounceTime(400) // 4秒内只获取最新的数据发射
+             .do(value=>console.log(value))
+             .distinctUntilChanged()
+             //.distinctUntilChanged()
+             .switchMap(term => this.WikipediaService.search(term));
+             */
+
+  _search (term:string){
     var search = new URLSearchParams();
     //var wikiURL= 'http://en.wikipedia.org/w/api.php';
     search.set('action','opensearch');

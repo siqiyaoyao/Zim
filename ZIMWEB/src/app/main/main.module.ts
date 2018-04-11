@@ -16,6 +16,8 @@ import { ViewerComponent } from './bim/viewer/viewer.component';
 import { T1Component } from './rxjs/t1/t1.component';
 import { WikiComponent } from './rxjs/wiki/wiki/wiki.component';
 import { JsonpModule } from '@angular/http';
+import { FormComponent } from './pages/form/form.component';
+import { FormModelComponent } from './pages/form-model/form-model.component';
 //import { UploadsComponent } from './pages/uploads/uploads.component';
 
 
@@ -35,6 +37,6 @@ import { JsonpModule } from '@angular/http';
     WikipediaService,
     
   ],
-  declarations: [HomeComponent, MainComponent, UploadsComponent, ViewerComponent, T1Component, WikiComponent]
+  declarations: [HomeComponent, MainComponent, UploadsComponent, ViewerComponent, T1Component, WikiComponent, FormComponent, FormModelComponent]
 })
 export class MainModule { }
