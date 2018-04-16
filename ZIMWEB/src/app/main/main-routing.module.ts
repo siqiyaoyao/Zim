@@ -1,3 +1,4 @@
+import { NzformComponent } from './nz/nzform/nzform.component';
 import { FormModelComponent } from './pages/form-model/form-model.component';
 import { WikiComponent } from './rxjs/wiki/wiki/wiki.component';
 import { T1Component } from './rxjs/t1/t1.component';
@@ -22,7 +23,8 @@ const routes: Routes = [
       {path:'T1',component:T1Component},
       {path:'wiki',component:WikiComponent},
       {path:'form',component:FormComponent},
-      {path:'',component:FormModelComponent},
+      {path:'formModel',component:FormModelComponent},
+      {path:'',component:NzformComponent},
     ]
    
   },

@@ -23,6 +23,7 @@ export class WikiComponent implements OnInit {
   items:Observable<Array<string>>;
   term = new FormControl();
   constructor(private WikipediaService:WikipediaService) { 
+    this.items = WikipediaService.search(this.term.valueChanges);
     /*
     this.items = this.term.valueChanges // 输入框的值改变即触发
              .debounceTime(400) // 4秒内只获取最新的数据发射

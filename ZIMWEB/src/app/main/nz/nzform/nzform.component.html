@@ -1,0 +1,8 @@
+<nz-tabset>
+  <nz-tab *ngFor="let tab of tabs">
+    <ng-template #nzTabHeading>
+      {{tab.id}}
+    </ng-template>
+    <span>{{tab.content}}</span>
+  </nz-tab>
+</nz-tabset>

@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 
 import { BrowserModule,Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,6 +25,7 @@ import { ModalComponent } from './items/modal/modal.component';
     AppComponent,
    
     ModalComponent,
+    LoginComponent,
     
     
    
@@ -37,6 +39,7 @@ import { ModalComponent } from './items/modal/modal.component';
     MainModule,
     LoginModule,
     AppRoutingModule,  
+
   ],
   providers:[
     Title,

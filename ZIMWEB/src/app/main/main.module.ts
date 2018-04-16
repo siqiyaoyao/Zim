@@ -18,6 +18,8 @@ import { WikiComponent } from './rxjs/wiki/wiki/wiki.component';
 import { JsonpModule } from '@angular/http';
 import { FormComponent } from './pages/form/form.component';
 import { FormModelComponent } from './pages/form-model/form-model.component';
+import { NzformComponent } from './nz/nzform/nzform.component';
+import { RestService } from './services/rest.service';
 //import { UploadsComponent } from './pages/uploads/uploads.component';
 
 
@@ -35,8 +37,9 @@ import { FormModelComponent } from './pages/form-model/form-model.component';
   ],
   providers:[
     WikipediaService,
+    RestService
     
   ],
-  declarations: [HomeComponent, MainComponent, UploadsComponent, ViewerComponent, T1Component, WikiComponent, FormComponent, FormModelComponent]
+  declarations: [HomeComponent, MainComponent, UploadsComponent, ViewerComponent, T1Component, WikiComponent, FormComponent, FormModelComponent, NzformComponent]
 })
 export class MainModule { }

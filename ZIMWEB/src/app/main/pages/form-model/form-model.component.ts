@@ -46,6 +46,7 @@ export class FormModelComponent implements OnInit {
                         console.log(this.msg);
                         street$.setValue(cityValue);
                       });
+                      
     this.userForm.valueChanges.subscribe(x =>this.changeMsg ={
       event:'Form DATA CHANGED',object:x
     })

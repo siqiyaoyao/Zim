@@ -19,8 +19,10 @@ export class WikipediaService {
              //.distinctUntilChanged()
              .switchMap(term => this.WikipediaService.search(term));
              */
-  search(term){
-    
+  search(terms:Observable<string>,debounceDuration = 400){
+    return terms.debounceTime(debounceDuration)
+                .distinctUntilChanged()
+                .switchMap(term => this._search(term));
 
   }
 
