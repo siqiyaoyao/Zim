@@ -1,4 +1,5 @@
 
+
 import { WikipediaService } from './rxjs/services/wikipedia.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -37,7 +38,8 @@ import { RestService } from './services/rest.service';
   ],
   providers:[
     WikipediaService,
-    RestService
+    RestService,
+  
     
   ],
   declarations: [HomeComponent, MainComponent, UploadsComponent, ViewerComponent, T1Component, WikiComponent, FormComponent, FormModelComponent, NzformComponent]

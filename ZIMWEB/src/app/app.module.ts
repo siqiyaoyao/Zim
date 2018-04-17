@@ -1,4 +1,3 @@
-import { LoginComponent } from './login/login.component';
 
 import { BrowserModule,Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -9,12 +8,14 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { AppComponent } from './app.component';
 
 import { MainModule } from './main/main.module';
-import { LoginModule } from './login/login.module';
+
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 
 import { ModalComponent } from './items/modal/modal.component';
-
+import { LoginModule } from './login/login.module';
+import { LoginComponent } from './login/login.component';
+import { Router } from '@angular/router';
 
 
 //test router
@@ -23,12 +24,8 @@ import { ModalComponent } from './items/modal/modal.component';
 @NgModule({
   declarations: [
     AppComponent,
-   
-    ModalComponent,
-    LoginComponent,
-    
-    
-   
+    ModalComponent,   
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +35,7 @@ import { ModalComponent } from './items/modal/modal.component';
     NgZorroAntdModule.forRoot(), // 可以接受一个可选的配置对象，用于引入外部字体文件
     MainModule,
     LoginModule,
+   
     AppRoutingModule,  
 
   ],
@@ -47,4 +45,7 @@ import { ModalComponent } from './items/modal/modal.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(router: Router) { // 侦测路由状态
+  console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+}}

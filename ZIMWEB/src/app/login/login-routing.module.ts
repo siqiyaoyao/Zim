@@ -18,4 +18,4 @@ const routes: Routes = [
     GuardmanageService,
   ]
 })
-export class LoginModule { }
+export class LoginRoutingModule { }

@@ -9,11 +9,13 @@ import { HomeComponent } from './home/home.component';
 import { UploadsComponent } from './pages/uploads/uploads.component';
 import { ViewerComponent } from './bim/viewer/viewer.component';
 import { FormComponent } from './pages/form/form.component';
+
 const routes: Routes = [
   ///*
   {
     path:'',
     component:MainComponent,
+    //canActivate:[GuardmanageService],
     //component:ViewerComponent,
     
     children:[
