@@ -1,6 +1,43 @@
-<h2>LOGIN</h2>
-<p>{{message}}</p>
-<p>
+<!-- <h2>LOGIN</h2>
+<p>{{message}}</p> -->
+
+<!-- <p>
   <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
   <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
-</p>
+</p> -->
+<div nz-row class="i-login-form">
+  <!-- <div class="text-center i-login-title"><h1>登录页</h1></div>  -->
+  <p class="text-center">{{message}}</p> 
+             
+  <div nz-col [nzSpan]="12" [nzOffset]="6">        
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="_submitForm()">
+      <div nz-form-item>
+        <div nz-form-control>
+          <nz-input formControlName="accountName" [nzPlaceHolder]="'用户名'">
+            <ng-template #prefix>
+              <i class="anticon anticon-user"></i>
+            </ng-template>
+          </nz-input>
+          <!-- <div nz-form-explain *ngIf="validateForm.controls.userName.dirty&&validateForm.controls.userName.hasError('required')">请输入用户名！</div> -->
+        </div>
+      </div>
+      <div nz-form-item>
+        <div nz-form-control>
+          <nz-input formControlName="accountPwd" [nzPlaceHolder]="'密码'">
+            <ng-template #prefix>
+              <i class="anticon anticon-user"></i>
+            </ng-template>
+          </nz-input>
+          <!-- <div nz-form-explain *ngIf="validateForm.controls.password.dirty&&validateForm.controls.password.hasError('required')">请输入密码！</div> -->
+        </div>
+      </div>
+      <div nz-form-item>
+        <div nz-form-control>
+          <button nz-button [nzType]="'primary'">登录</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<button nz-button [nzType]="'primary'" (click) ="test()">测试</button>

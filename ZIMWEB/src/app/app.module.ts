@@ -1,3 +1,4 @@
+import { GuardmanageService } from './services/guardmanage.service';
 
 import { BrowserModule,Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,7 +26,7 @@ import { Router } from '@angular/router';
   declarations: [
     AppComponent,
     ModalComponent,   
-    LoginComponent
+    //LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -34,18 +35,18 @@ import { Router } from '@angular/router';
     BrowserAnimationsModule,
     NgZorroAntdModule.forRoot(), // 可以接受一个可选的配置对象，用于引入外部字体文件
     MainModule,
-    LoginModule,
-   
+    LoginModule,   
     AppRoutingModule,  
 
   ],
   providers:[
     Title,
+    GuardmanageService
    
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
   constructor(router: Router) { // 侦测路由状态
-  console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+  //console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
 }}

@@ -1,3 +1,5 @@
+import { AuthService } from './../services/auth.service';
+import { GuardmanageService } from './../services/guardmanage.service';
 import { NzformComponent } from './nz/nzform/nzform.component';
 import { FormModelComponent } from './pages/form-model/form-model.component';
 import { WikiComponent } from './rxjs/wiki/wiki/wiki.component';
@@ -15,18 +17,25 @@ const routes: Routes = [
   {
     path:'',
     component:MainComponent,
-    //canActivate:[GuardmanageService],
+    canActivate:[GuardmanageService],
+    
     //component:ViewerComponent,
     
     children:[
-      {path:'home',component:HomeComponent},
-      {path:'upload',component:UploadsComponent},
-      {path:'view',component:ViewerComponent},
-      {path:'T1',component:T1Component},
-      {path:'wiki',component:WikiComponent},
-      {path:'form',component:FormComponent},
-      {path:'formModel',component:FormModelComponent},
-      {path:'',component:NzformComponent},
+      {
+        path:'',
+        canActivateChild:[GuardmanageService],
+        children:[
+          {path:'home',component:HomeComponent},
+          {path:'upload',component:UploadsComponent},
+          {path:'view',component:ViewerComponent},
+          {path:'T1',component:T1Component},
+          {path:'wiki',component:WikiComponent},
+          {path:'form',component:FormComponent},
+          {path:'formModel',component:FormModelComponent},
+          {path:'',component:NzformComponent},
+        ]
+    }
     ]
    
   },
