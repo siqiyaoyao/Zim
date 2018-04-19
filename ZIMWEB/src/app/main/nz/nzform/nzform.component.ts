@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { RestService } from './../../services/rest.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,6 +14,7 @@ export class NzformComponent implements OnInit {
   tabs:any;
   constructor(
     private rest:RestService,
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -42,6 +44,10 @@ export class NzformComponent implements OnInit {
     this.tabs.push({
       craft: 'New Tab'
     });
+  }
+
+  test(){
+    this.router.navigate(['/T1'])
   }
 }
 

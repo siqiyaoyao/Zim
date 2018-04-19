@@ -1,4 +1,3 @@
-import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { RestService } from './../main/services/rest.service';
 import { Router,RouterModule } from '@angular/router';
 import { AuthService } from './../services/auth.service';
@@ -20,7 +19,6 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private rest:RestService,
     public router:Router,
-    private http:HttpClient
   ) { 
     this.setMessage();
   }
@@ -51,8 +49,8 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.message = '正在登录...'
-
-    this.authService.login().subscribe(()=>{
+    let body = JSON.stringify(this.validateForm.value)
+    this.authService.login(this.url,body).subscribe(()=>{
       this.setMessage();
       if(this.authService.isLoggedIn){
         let redirect = this.authService.redirctUrl?this.authService.redirctUrl:'/home'
@@ -68,29 +66,16 @@ export class LoginComponent implements OnInit {
   }
 
   test(){
-    let data = {
-     
-				"accountName": "admin",
-				"accountPwd": "nbsg!@#"
-			
-    }
-    let headers = new HttpHeaders().set('Content-type', 'application/json;charset=UTF-8'); 
+
     let body = JSON.stringify(this.validateForm.value)
-    this.http.post(this.url,body,
-      {headers})
-      .subscribe(
-        res =>{
+    this.rest.adminCheck$(this.url,body)
+        .subscribe(res =>{
           console.log(res);
-        }
-      )
-    // this.rest.adminCheck$(this.url,data)
-    //     .subscribe(res =>{
-    //       console.log(res.data);
           
-    //     },
-    //     err=>{
-    //       console.log(err)
-    //     })
+        },
+        err=>{
+          console.log(err)
+        })
     console.log(body)
   }
 }

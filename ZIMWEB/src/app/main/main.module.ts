@@ -10,7 +10,7 @@ import { MainComponent } from './main.component';
 //import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { UploadsComponent } from './pages/uploads/uploads.component';
 import { ViewerComponent } from './bim/viewer/viewer.component';
@@ -39,6 +39,7 @@ import { RestService } from './services/rest.service';
   providers:[
     WikipediaService,
     RestService,
+    
   
     
   ],
