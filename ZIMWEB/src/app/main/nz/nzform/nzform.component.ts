@@ -47,7 +47,7 @@ export class NzformComponent implements OnInit {
   }
 
   test(){
-    this.router.navigate(['/T1'])
+    this.router.navigate(['/admin/wiki'])
   }
 }
 

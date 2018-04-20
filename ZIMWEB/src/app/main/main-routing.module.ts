@@ -1,3 +1,4 @@
+import { AdminGuard } from './../services/admin.guard';
 import { AuthService } from './../services/auth.service';
 import { GuardmanageService } from './../services/guardmanage.service';
 import { NzformComponent } from './nz/nzform/nzform.component';
@@ -17,25 +18,40 @@ const routes: Routes = [
   {
     path:'',
     component:MainComponent,
-    canActivate:[GuardmanageService],
+    canActivate:[
+      GuardmanageService
+    
+    ],
     
     //component:ViewerComponent,
     
     children:[
       {
         path:'',
-        canActivateChild:[GuardmanageService],
+        canActivateChild:[
+         // GuardmanageService
+        ],
         children:[
           {path:'home',component:HomeComponent},
           {path:'upload',component:UploadsComponent},
           {path:'view',component:ViewerComponent},
           {path:'T1',component:T1Component},
-          {path:'wiki',component:WikiComponent},
+          // {path:'wiki',component:WikiComponent},
           {path:'form',component:FormComponent},
           {path:'formModel',component:FormModelComponent},
           {path:'',component:NzformComponent},
         ]
-    }
+      },
+      {
+        path:'admin',
+        canActivateChild:[
+          //GuardmanageService,
+          AdminGuard
+        ],
+        children:[         
+          {path:'wiki',component:WikiComponent},         
+        ]
+      }
     ]
    
   },

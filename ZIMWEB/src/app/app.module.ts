@@ -1,3 +1,4 @@
+import { AdminGuard } from './services/admin.guard';
 import { GuardmanageService } from './services/guardmanage.service';
 
 import { BrowserModule,Title } from '@angular/platform-browser';
@@ -41,7 +42,8 @@ import { Router } from '@angular/router';
   ],
   providers:[
     Title,
-    GuardmanageService
+    GuardmanageService,
+    AdminGuard,
    
   ],
   bootstrap: [AppComponent]

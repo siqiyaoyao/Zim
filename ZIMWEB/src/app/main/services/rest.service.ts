@@ -47,7 +47,6 @@ export class RestService {
       .pipe(
         catchError((error) => this._handleError(error))
       )   
-
   }
 
   // 获取单位信息

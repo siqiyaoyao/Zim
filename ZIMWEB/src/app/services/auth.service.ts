@@ -24,15 +24,16 @@ export class AuthService {
             if(val.Success){
               this.isLoggedIn = true;
               this._setSession(val.Token);
+              this.handleAuth(val.Token)
             }else{
               this.isLoggedIn = false;
             }
           })
-          .do(val =>{
-            if(val.Success){
-               this.handleAuth(val.Token)
-            }
-          })
+          // .do(val =>{
+          //   if(val.Success){
+          //      this.handleAuth(val.Token)
+          //   }
+          // })
   }
 
   handleAuth(results){    
